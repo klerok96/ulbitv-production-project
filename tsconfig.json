@@ -17,7 +17,11 @@
     "esModuleInterop": true,
     // позваоляет использовать обычые импорты без звездочки
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    // нужно согласавать с вебкаком
+    "paths": {
+      "*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {

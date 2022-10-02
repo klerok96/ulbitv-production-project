@@ -2,7 +2,7 @@ import webpack from "webpack";
 import { buildDevServer } from "./buildDevServer";
 import { buildLoader } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
-import { buildResolve } from "./buildResolve";
+import { buildResolvers } from "./buildResolvers";
 import { BuildOptions } from "./types/config";
 
 export function buildWebpackConfig(
@@ -26,7 +26,7 @@ export function buildWebpackConfig(
       // обрабатывать файлы которые не js, чтобы можно было использовать их в проекте
       rules: buildLoader(options),
     },
-    resolve: buildResolve(),
+    resolve: buildResolvers(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };

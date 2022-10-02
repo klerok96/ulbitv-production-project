@@ -1,7 +1,7 @@
 import { PropsWithChildren, useMemo, useState } from "react";
-import { defaultTheme, Theme, ThemeContext } from "./ThemeContext";
+import { defaultTheme, Theme, ThemeContext } from "../lib/ThemeContext";
 
-const ThemeProvider: React.FC<PropsWithChildren> = (props) => {
+export const ThemeProvider: React.FC<PropsWithChildren> = (props) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   const defaultProps = useMemo(
@@ -18,5 +18,3 @@ const ThemeProvider: React.FC<PropsWithChildren> = (props) => {
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;
