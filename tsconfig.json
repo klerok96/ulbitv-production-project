@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    // куда происходит сборка, не особо нужна т к это определает вебпак
+    "outDir": "./dist/",
+    // запрещает использовать переменные без явное использования типа
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // в какую спецификацию компилируем ts код
+    "target": "es5",
+    "jsx": "react-jsx",
+    // Компилятор срабатывает не только на ts но и на js файлы
+    "allowJs": true,
+    // Определяет какие импорты будут
+    "moduleResolution": "node",
+    // позволяет работать с пакетами которые используют
+    // common js как с обычными пакетами с помощью import (require() module.export) = common js
+    "esModuleInterop": true,
+    // позваоляет использовать обычые импорты без звездочки
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "."
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
