@@ -19,6 +19,7 @@ export function buildLoader(option: BuildOptions): webpack.RuleSetRule[] {
             localIdentName: option.isDev
               ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",
+            exportLocalsConvention: "camelCase",
           },
         },
       },
