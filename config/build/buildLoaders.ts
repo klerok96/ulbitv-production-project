@@ -3,11 +3,26 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildLoader(option: BuildOptions): webpack.RuleSetRule[] {
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
-      // Creates `style` nodes from JS strings
-      // MiniCssExtractPlugin для создание отдельных файлов css
+      // Creates `style` nodes from JS strings при дев
+      // MiniCssExtractPlugin для создание отдельных файлов css для прод чтобы не грузить все в js файле
       option.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
       // Translates CSS into CommonJS
       {
@@ -35,5 +50,5 @@ export function buildLoader(option: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader];
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader];
 }
