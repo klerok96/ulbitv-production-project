@@ -20,7 +20,7 @@ export const RouteConfig: Record<AppRoutes, RouteProps> = {
     element: <MainPage />,
   },
   [AppRoutes.About]: {
-    path: RoutePath.main,
+    path: RoutePath.about,
     element: <AboutPage />,
   },
 };

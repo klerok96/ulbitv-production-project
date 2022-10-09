@@ -25,3 +25,9 @@ declare module "*.json" {
   const content: string;
   export default content;
 }
+
+declare namespace NodeJS {
+  export interface ProcessEnv {
+    IS_DEV: string;
+  }
+}

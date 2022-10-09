@@ -1,10 +1,12 @@
 import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import Dotenv from "dotenv-webpack";
 import { BuildOptions } from "./types/config";
 
 export function buildPlugins({
   paths,
+  isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new MiniCssExtractPlugin({
@@ -19,5 +21,9 @@ export function buildPlugins({
     }),
     // Показывает процесс сборки
     new webpack.ProgressPlugin(),
+    new Dotenv(),
+    new webpack.DefinePlugin({
+      "process.env.IS_DEV": isDev,
+    }),
   ];
 }
