@@ -25,5 +25,6 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       "process.env.IS_DEV": isDev,
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ];
 }
