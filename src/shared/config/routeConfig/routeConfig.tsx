@@ -1,17 +1,17 @@
-import React from "react";
-import { RouteProps } from "react-router-dom";
+import React from 'react';
+import { RouteProps } from 'react-router-dom';
 
-const AboutPage = React.lazy(() => import("pages/AboutPage/ui/AboutPage"));
-const MainPage = React.lazy(() => import("pages/MainPage/ui/MainPage"));
+const AboutPage = React.lazy(() => import('pages/AboutPage/ui/AboutPage'));
+const MainPage = React.lazy(() => import('pages/MainPage/ui/MainPage'));
 
 export enum AppRoutes {
-  Main = "main",
-  About = "about",
+  Main = 'main',
+  About = 'about',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.Main]: "/",
-  [AppRoutes.About]: "/about",
+  [AppRoutes.Main]: '/',
+  [AppRoutes.About]: '/about',
 };
 
 export const RouteConfig: Record<AppRoutes, RouteProps> = {

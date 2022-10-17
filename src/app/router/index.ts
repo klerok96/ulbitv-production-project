@@ -1,1 +1,1 @@
-export * from "./ui/AppRoute";
+export * from './ui/AppRoute';

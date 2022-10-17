@@ -1,8 +1,8 @@
-import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import Dotenv from "dotenv-webpack";
-import { BuildOptions } from "./types/config";
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import Dotenv from 'dotenv-webpack';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
@@ -11,8 +11,8 @@ export function buildPlugins({
   return [
     new MiniCssExtractPlugin({
       // на выходе что выходит
-      filename: "css/[name].[contenthash:8].css",
-      chunkFilename: "css/[name].[contenthash:8].css",
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     // для генерации html
     new HtmlWebpackPlugin({
@@ -23,7 +23,7 @@ export function buildPlugins({
     new webpack.ProgressPlugin(),
     new Dotenv(),
     new webpack.DefinePlugin({
-      "process.env.IS_DEV": isDev,
+      'process.env.IS_DEV': isDev,
     }),
     new webpack.HotModuleReplacementPlugin(),
   ];
