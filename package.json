@@ -8,7 +8,10 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mod=development",
     "test": "echo \"Error:\" && exit 1",
-    "lint:ts": "eslint \"**/*.{ts,tsx}\""
+    "lint:ts": "eslint \"**/*.{ts,tsx}\"",
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +35,7 @@
     "dotenv-webpack": "8.0.1",
     "eslint": "8.25.0",
     "eslint-config-airbnb": "19.0.4",
+    "eslint-plugin-i18next": "6.0.0-2",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.10",
@@ -42,6 +46,8 @@
     "sass": "1.55.0",
     "sass-loader": "13.0.2",
     "style-loader": "3.3.1",
+    "stylelint": "14.14.0",
+    "stylelint-config-standard-scss": "6.0.0",
     "ts-loader": "9.4.0",
     "ts-node": "10.9.1",
     "typescript": "4.8.3",

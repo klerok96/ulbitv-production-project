@@ -1,3 +1,7 @@
 {
-  "translateBtn": "English"
+  "translateBtn": "English",
+  "navbar": {
+    "main": "Main",
+    "about": "About"
+  }
 }

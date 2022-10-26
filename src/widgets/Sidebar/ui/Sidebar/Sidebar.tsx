@@ -22,7 +22,7 @@ export const Sidebar: React.FC<PropsWithChildren<SidebarProps>> = (props) => {
         className,
       ])}
     >
-      <button type="button" onClick={onToggle}>toggle</button>
+      {/* <button type="button" onClick={onToggle}>q</button> */}
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.langSwitcher} />

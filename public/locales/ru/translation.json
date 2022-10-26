@@ -1,3 +1,7 @@
 {
-  "translateBtn": "Русский"
+  "translateBtn": "Русский",
+  "navbar": {
+    "main": "Главная",
+    "about": "О странице"
+  }
 }
