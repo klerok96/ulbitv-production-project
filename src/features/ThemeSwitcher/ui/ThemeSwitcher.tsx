@@ -3,7 +3,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DarkIcon, LightIcon, Button, ThemeButton,
 } from 'shared/ui';
-import cls from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -16,7 +15,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
   return (
     <Button
       theme={ThemeButton.Clear}
-      className={classNames(cls.themeSwitcher, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={toggleTheme}
     >
       {theme === Theme.Dark ? <DarkIcon /> : <LightIcon />}

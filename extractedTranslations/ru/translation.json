@@ -1,4 +1,13 @@
 {
+  "about": "",
+  "main": "",
+  "navbar": {
+    "about": "",
+    "main": ""
+  },
+  "notFoundPage": {
+    "title": ""
+  },
   "title": "",
   "translateBtn": ""
 }

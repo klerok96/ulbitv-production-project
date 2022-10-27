@@ -3,5 +3,8 @@
   "navbar": {
     "main": "Main",
     "about": "About"
+  },
+  "notFoundPage": {
+    "title": "Page not found"
   }
 }
