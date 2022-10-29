@@ -6,5 +6,9 @@
   },
   "notFoundPage": {
     "title": "Page not found"
+  },
+  "pageError": {
+    "message": "An unexpected error has occurred",
+    "refreshBtn": "Refresh the page"
   }
 }
