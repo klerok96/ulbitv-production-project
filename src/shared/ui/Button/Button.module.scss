@@ -1,4 +1,5 @@
 .button {
+  padding: 10px 15px;
   cursor: pointer;
   color: var(--primary-color);
 }
@@ -9,4 +10,9 @@
   border: none;
   background: none;
   outline: none;
+}
+
+.outline {
+  border: 1px solid var(--primary-color);
+  background: none;
 }

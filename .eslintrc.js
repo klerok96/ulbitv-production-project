@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,11 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   globals: {
     React: true,
   },
@@ -29,17 +21,23 @@ module.exports = {
     'react/prop-types': 'off',
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'react/function-component-definition': [
-      'error',
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
+    'react/function-component-definition': ['error', {
+      namedComponents: 'arrow-function',
+      unnamedComponents: 'arrow-function',
+    }],
     'import/extensions': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.ts', 'tsx'] }],
+    'react/jsx-filename-extension': [1, {
+      extensions: ['.js', '.ts', 'tsx'],
+    }],
     'no-shadow': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-unused-vars': 'off',
   },
+  overrides: [
+    {
+      files: ['*stories.tsx'],
+      rules: {
+        'react/jsx-props-no-spreading': 'off',
+      },
+    }],
 };
