@@ -3,3 +3,4 @@
 /.env
 /extractedTranslations
 /.loki
+/storybook-static
