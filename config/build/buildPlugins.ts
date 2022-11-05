@@ -9,7 +9,7 @@ export function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new MiniCssExtractPlugin({
       // на выходе что выходит
       filename: 'css/[name].[contenthash:8].css',
@@ -26,11 +26,16 @@ export function buildPlugins({
     new webpack.DefinePlugin({
       'process.env.IS_DEV': isDev,
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin(
+  ];
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(new BundleAnalyzerPlugin(
       {
         openAnalyzer: false,
       },
-    ),
-  ];
+    ));
+  }
+
+  return plugins;
 }
