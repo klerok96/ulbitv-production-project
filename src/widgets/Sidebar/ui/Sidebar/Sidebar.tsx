@@ -31,7 +31,7 @@ export const Sidebar: React.FC<PropsWithChildren<SidebarProps>> = (props) => {
         className,
       ])}
     >
-      <Button className={cls.collapseBtn} data-testid="sidebar-toggle" theme={ButtonTheme.BackgroundInverted} type="button" onClick={onToggle}>{collapsed ? '>' : '<'}</Button>
+      <Button className={cls.collapseBtn} testId="sidebar-toggle" theme={ButtonTheme.BackgroundInverted} type="button" onClick={onToggle}>{collapsed ? '>' : '<'}</Button>
       <nav className={cls.items}>
         <AppLink
           theme={AppLinkTheme.Secondary}
