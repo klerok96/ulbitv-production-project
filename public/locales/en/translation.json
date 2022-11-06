@@ -1,5 +1,8 @@
 {
-  "translateBtn": "English",
+  "langSwitcher": {
+    "language": "English",
+    "shortLanguage": "En"
+  },  
   "navbar": {
     "main": "Main",
     "about": "About"

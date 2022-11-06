@@ -1,7 +1,7 @@
 import { useTheme, Theme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-  DarkIcon, LightIcon, Button, ThemeButton,
+  DarkIcon, LightIcon, Button, ButtonTheme,
 } from 'shared/ui';
 
 interface ThemeSwitcherProps {
@@ -14,7 +14,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 
   return (
     <Button
-      theme={ThemeButton.Clear}
+      theme={ButtonTheme.Clear}
       className={classNames('', {}, [className])}
       onClick={toggleTheme}
     >

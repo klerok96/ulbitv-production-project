@@ -2,6 +2,8 @@
   padding: 10px 15px;
   cursor: pointer;
   color: var(--primary-color);
+  font-size: var(--font-size-m);
+  line-height: var(--font-line-m);
 }
 
 .clear {
@@ -15,4 +17,31 @@
 .outline {
   border: 1px solid var(--primary-color);
   background: none;
+}
+
+.background {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.background-inverted {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: none;
+}
+
+.size-m {
+  font-size: var(--font-size-m);
+  line-height: var(--font-line-m);
+}
+
+.size-l {
+  font-size: var(--font-size-l);
+  line-height: var(--font-line-l);
+}
+
+.size-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-line-xl);
 }

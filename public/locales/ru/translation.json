@@ -1,5 +1,8 @@
 {
-  "translateBtn": "Русский",
+  "langSwitcher": {
+    "language": "Русский",
+    "shortLanguage": "Рус"
+  },
   "navbar": {
     "main": "Главная",
     "about": "О странице"
