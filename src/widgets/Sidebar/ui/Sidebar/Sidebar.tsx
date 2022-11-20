@@ -5,7 +5,11 @@ import { ThemeSwitcher } from 'features/ThemeSwitcher';
 
 import {
   AboutIcon,
-  AppLink, AppLinkTheme, Button, ButtonTheme, MainIcon,
+  AppLink,
+  AppLinkTheme,
+  Button,
+  ButtonTheme,
+  MainIcon,
 } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { AppRoutes, RoutePath } from 'app/providers/routeConfig';
@@ -31,19 +35,23 @@ export const Sidebar: React.FC<PropsWithChildren<SidebarProps>> = (props) => {
         className,
       ])}
     >
-      <Button className={cls.collapseBtn} testId="sidebar-toggle" theme={ButtonTheme.BackgroundInverted} type="button" onClick={onToggle}>{collapsed ? '>' : '<'}</Button>
+      <Button
+        className={cls.collapseBtn}
+        testId="sidebar-toggle"
+        theme={ButtonTheme.BackgroundInverted}
+        type="button"
+        onClick={onToggle}
+      >
+        {collapsed ? '>' : '<'}
+      </Button>
       <nav className={cls.items}>
         <AppLink
           theme={AppLinkTheme.Secondary}
           to={RoutePath[AppRoutes.Main]}
           className={cls.item}
         >
-          <MainIcon
-            className={cls.icon}
-          />
-          <span className={cls.link}>
-            {t('navbar.main')}
-          </span>
+          <MainIcon className={cls.icon} />
+          <span className={cls.link}>{t('navbar.main')}</span>
         </AppLink>
         <AppLink
           theme={AppLinkTheme.Secondary}
@@ -51,11 +59,8 @@ export const Sidebar: React.FC<PropsWithChildren<SidebarProps>> = (props) => {
           className={cls.item}
         >
           <AboutIcon className={cls.icon} />
-          <span className={cls.link}>
-            {t('navbar.about')}
-          </span>
+          <span className={cls.link}>{t('navbar.about')}</span>
         </AppLink>
-
       </nav>
       <div className={cls.switchers}>
         <ThemeSwitcher />

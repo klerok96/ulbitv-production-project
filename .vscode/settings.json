@@ -1,4 +1,17 @@
 {
-  "jest.autoRun": "off",
-  "jest.jestCommandLine": "npx jest --config ./config/jest/jest.config.ts"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "eslint.options": {
+    "overrideConfigFile": "./.eslintrc.js"
+  },
+  // "jest.autoRun": "off",
+  // "jest.jestCommandLine": "npm run test:unit",
+  "cSpell.enableFiletypes": ["jsonc"],
+  "cSpell.language": "en,ru,ru-RU",
+  "i18n-ally.localesPaths": [
+    "public/locales",
+    "src/shared/config/i18n"
+  ]
 }
