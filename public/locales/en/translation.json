@@ -2,7 +2,7 @@
   "langSwitcher": {
     "language": "English",
     "shortLanguage": "En"
-  },  
+  },
   "navbar": {
     "main": "Main",
     "about": "About"
@@ -13,5 +13,6 @@
   "pageError": {
     "message": "An unexpected error has occurred",
     "refreshBtn": "Refresh the page"
-  }
+  },
+  "widget.navbar": "Enter"
 }

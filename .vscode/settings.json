@@ -10,8 +10,8 @@
   // "jest.jestCommandLine": "npm run test:unit",
   "cSpell.enableFiletypes": ["jsonc"],
   "cSpell.language": "en,ru,ru-RU",
-  "i18n-ally.localesPaths": [
-    "public/locales",
-    "src/shared/config/i18n"
-  ]
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.displayLanguage": "ru",
+  "i18n-ally.sourceLanguage": "ru"
 }

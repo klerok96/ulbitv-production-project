@@ -7,12 +7,13 @@ export enum ButtonTheme {
   Outline = 'outline',
   Background = 'background',
   BackgroundInverted = 'background-inverted',
+  ClearInverted = 'clear-inverted',
 }
 
 export enum ButtonSize {
   M = 'size-m',
   L = 'size-l',
-  Xl = 'size-xl'
+  Xl = 'size-xl',
 }
 
 interface ButtonProps {
@@ -25,10 +26,7 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const {
-    className, children, theme,
-    type, size, testId, onClick,
-  } = props;
+  const { className, children, theme, type, size, testId, onClick } = props;
 
   const mods: Record<string, boolean> = {
     [cls[theme]]: !!theme,
