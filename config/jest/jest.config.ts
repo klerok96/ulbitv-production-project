@@ -9,18 +9,12 @@ export default {
   clearMocks: true,
   testEnvironment: 'jsdom',
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    '/node_modules/', 'src',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/', 'src'],
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    'node_modules',
-  ],
-  modulePaths: [
-    '<rootDir>src',
-  ],
+  moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
@@ -33,12 +27,17 @@ export default {
     'node',
   ],
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   setupFilesAfterEnv: ['<rootDir>config/jest/jestSetup.ts'],
   moduleNameMapper: {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
     '^.+\\.svg$': '<rootDir>config/jest/jestEmptyComponent.tsx',
+  },
+  globals: {
+    process: {
+      env: {
+        IS_DEV: true,
+      },
+    },
   },
 };
