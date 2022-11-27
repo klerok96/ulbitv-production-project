@@ -33,11 +33,11 @@ export default {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
     '^.+\\.svg$': '<rootDir>config/jest/jestEmptyComponent.tsx',
   },
-  globals: {
-    process: {
-      env: {
-        IS_DEV: true,
-      },
-    },
-  },
+  // globals: {
+  //   process: {
+  //     env: {
+  //       IS_DEV: true,
+  //     },
+  //   },
+  // },
 };

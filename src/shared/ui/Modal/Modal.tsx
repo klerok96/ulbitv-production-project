@@ -13,7 +13,6 @@ const handleContentClick = (e: React.MouseEvent) => e.stopPropagation();
 
 export const Modal: React.FC<ModalProps> = React.memo((props) => {
   const { isOpen, children, onClose } = props;
-  const { theme } = useTheme();
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
@@ -38,7 +37,7 @@ export const Modal: React.FC<ModalProps> = React.memo((props) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.modal, mods, [theme])}>
+      <div className={classNames(cls.modal, mods, [])}>
         <div className={cls.overlay} onClick={onClose}>
           <div className={cls.content} onClick={handleContentClick}>
             {children}

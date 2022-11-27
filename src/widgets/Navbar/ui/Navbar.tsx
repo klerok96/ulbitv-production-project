@@ -30,9 +30,7 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
       >
         {t('widget.navbar')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={handleCloseModal}>
-        test
-      </Modal>
+      <Modal isOpen={isAuthModal} onClose={handleCloseModal} />
     </div>
   );
 };
