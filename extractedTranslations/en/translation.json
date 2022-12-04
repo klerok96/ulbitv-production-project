@@ -1,0 +1,23 @@
+{
+  "langSwitcher": {
+    "language": "",
+    "shortLanguage": ""
+  },
+  "navbar": {
+    "about": "",
+    "main": ""
+  },
+  "notFoundPage": {
+    "title": ""
+  },
+  "pageError": {
+    "message": "",
+    "refreshBtn": ""
+  },
+  "title": "",
+  "toggle": "",
+  "translateBtn": "",
+  "widget": {
+    "navbar": ""
+  }
+}

@@ -1,4 +1,6 @@
 /build
-/node_modules
-/.env
-/extractedTranslations
+node_modules
+.idea
+/storybook-static
+.loki/report.html
+.loki/report.json
