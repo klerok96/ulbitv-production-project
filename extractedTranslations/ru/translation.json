@@ -3,6 +3,11 @@
     "language": "",
     "shortLanguage": ""
   },
+  "loginForm": {
+    "btn": "",
+    "login": "",
+    "password": ""
+  },
   "navbar": {
     "about": "",
     "main": ""
