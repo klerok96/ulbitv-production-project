@@ -6,7 +6,8 @@
   "loginForm": {
     "btn": "",
     "login": "",
-    "password": ""
+    "password": "",
+    "title": ""
   },
   "navbar": {
     "about": "",
@@ -23,6 +24,9 @@
   "toggle": "",
   "translateBtn": "",
   "widget": {
-    "navbar": ""
+    "navbar": {
+      "exist": "",
+      "login": ""
+    }
   }
 }

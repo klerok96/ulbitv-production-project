@@ -14,8 +14,10 @@
     "message": "An unexpected error has occurred",
     "refreshBtn": "Refresh the page"
   },
-  "widget.navbar": "Enter",
   "loginForm.btn": "To come in",
   "loginForm.password": "enter password",
-  "loginForm.login": "Enter login"
+  "loginForm.login": "Enter login",
+  "loginForm.title": "Authorization form",
+  "widget.navbar.login": "To come in",
+  "widget.navbar.exist": "Go out"
 }

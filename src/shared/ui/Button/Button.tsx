@@ -23,18 +23,22 @@ interface ButtonProps {
   type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   testId?: string;
   onClick: () => void;
+  disabled?: boolean;
 }
 
 export const Button: React.FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const { className, children, theme, type, size, testId, onClick } = props;
+  const { className, children, theme, type, size, testId, disabled, onClick } =
+    props;
 
   const mods: Record<string, boolean> = {
     [cls[theme]]: !!theme,
     [cls[size]]: !!size,
+    [cls.disabled]: !!disabled,
   };
 
   return (
     <button
+      disabled={disabled}
       data-testid={testId}
       // eslint-disable-next-line react/button-has-type
       type={type ?? 'button'}

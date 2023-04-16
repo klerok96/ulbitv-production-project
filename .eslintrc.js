@@ -56,6 +56,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
+    'no-param-reassign': ['error', { props: false }],
   },
   overrides: [
     {

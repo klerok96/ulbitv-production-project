@@ -1,10 +1,10 @@
 import path from 'path';
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import { BuildOptions, BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../loaders/buildCssLoader';
 import { buildSvgLoader } from '../loaders/buildSvgLoader';
 
-export default ({ config }: {config: webpack.Configuration}) => {
+export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: '',
     html: '',
@@ -18,11 +18,13 @@ export default ({ config }: {config: webpack.Configuration}) => {
     port: 0,
   };
 
-  if (!config.resolve
-    || !config.resolve.modules
-    || !config.resolve.extensions
-    || !config.module
-    || !config.module.rules) {
+  if (
+    !config.resolve ||
+    !config.resolve.modules ||
+    !config.resolve.extensions ||
+    !config.module ||
+    !config.module.rules
+  ) {
     throw new Error('Config has empty object');
   }
 
@@ -40,6 +42,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
   config.module.rules.push(buildSvgLoader());
   config.module.rules.push(buildCssLoader(options));
+
+  config.plugins?.push(new DefinePlugin({ __IS_DEV__: true }));
 
   return config;
 };

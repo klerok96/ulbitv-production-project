@@ -14,8 +14,10 @@
     "message": "Произошла непредвиденная ошибка",
     "refreshBtn": "Обновить страницу"
   },
-  "widget.navbar": "Войти",
   "loginForm.btn": "Войти",
   "loginForm.login": "Введите логин",
-  "loginForm.password": "Введите пароль"
+  "loginForm.password": "Введите пароль",
+  "loginForm.title": "Форма авторизации",
+  "widget.navbar.login": "Войти",
+  "widget.navbar.exist": "Выйти"
 }

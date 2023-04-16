@@ -1,6 +1,6 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-import { StoreProvider, StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
