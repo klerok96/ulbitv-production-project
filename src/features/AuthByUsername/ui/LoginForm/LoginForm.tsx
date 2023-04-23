@@ -1,17 +1,27 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { Button, ButtonTheme, Input } from 'shared/ui';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useDynamicModelLoader } from 'shared/lib/hooks/useDynamicModelLoader';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginState } from '../../model/selectors/getLoginState';
-import { loginActions } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
-export const LoginForm = () => {
+const initialReducers = {
+  loginForm: loginReducer,
+};
+
+const LoginForm = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { username, password, error, isLoading } = useSelector(getLoginState);
+
+  useDynamicModelLoader({
+    removeAfterUnmount: true,
+    reducers: initialReducers,
+  });
 
   const onChangeUsername = useCallback(
     (v: string) => {
@@ -62,3 +72,5 @@ export const LoginForm = () => {
     </div>
   );
 };
+
+export default LoginForm;
