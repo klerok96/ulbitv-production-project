@@ -1,5 +1,6 @@
 import {
   configureStore as configureReduxStore,
+  DeepPartial,
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
@@ -7,11 +8,15 @@ import { environments } from 'shared/config/env';
 import { StateSchema } from '../types';
 import { createReducerManager } from './reducerManager';
 
-const rootReducers: ReducersMapObject<StateSchema> = {
-  user: userReducer,
-};
+export const createReduxStore = (
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) => {
+  const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
+    user: userReducer,
+  };
 
-export const createReduxStore = (initialState?: StateSchema) => {
   const reducerManager = createReducerManager(rootReducers);
 
   const store = configureReduxStore<StateSchema>({
