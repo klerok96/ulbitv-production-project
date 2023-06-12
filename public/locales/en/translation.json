@@ -1,23 +1,23 @@
 {
-  "langSwitcher": {
-    "language": "English",
-    "shortLanguage": "En"
-  },
-  "navbar": {
-    "main": "Main",
-    "about": "About"
-  },
-  "notFoundPage": {
-    "title": "Page not found"
-  },
-  "pageError": {
-    "message": "An unexpected error has occurred",
-    "refreshBtn": "Refresh the page"
-  },
-  "loginForm.btn": "To come in",
-  "loginForm.password": "enter password",
-  "loginForm.login": "Enter login",
-  "loginForm.title": "Authorization form",
-  "widget.navbar.login": "To come in",
-  "widget.navbar.exist": "Go out"
+  "Тестовый пример": "Test example",
+  "Перевод": "Translate",
+  "Главная страница": "Main page",
+  "Язык": "English",
+  "новый перевод": "новый перевод",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page",
+  "throw error": "throw error",
+  "Главная": "Main",
+  "О сайте": "About us",
+  "Переключить": "Переключить",
+  "Короткий язык": "En",
+  "Войти": "Login",
+  "increment": "increment",
+  "decrement": "decrement",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Выйти": "Выйти"
 }

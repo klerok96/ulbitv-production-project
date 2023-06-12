@@ -1,1 +1,0 @@
-export { environments } from './env';

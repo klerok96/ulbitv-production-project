@@ -1,49 +1,36 @@
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import path from 'path';
-import webpack, { DefinePlugin } from 'webpack';
-import { BuildOptions, BuildPaths } from '../build/types/config';
-import { buildCssLoader } from '../loaders/buildCssLoader';
-import { buildSvgLoader } from '../loaders/buildSvgLoader';
+import { buildCssLoader } from '../build/loaders/buildCssLoader';
+import { BuildPaths } from '../build/types/config';
 
-export default ({ config }: { config: webpack.Configuration }) => {
-  const paths: BuildPaths = {
-    build: '',
-    html: '',
-    entry: '',
-    src: path.resolve(__dirname, '..', '..', 'src'),
-  };
-  const options: BuildOptions = {
-    mode: 'development',
-    paths,
-    isDev: true,
-    port: 0,
-  };
+export default ({ config }: {config: webpack.Configuration}) => {
+    const paths: BuildPaths = {
+        build: '',
+        html: '',
+        entry: '',
+        src: path.resolve(__dirname, '..', '..', 'src'),
+    };
+    config.resolve.modules.push(paths.src);
+    config.resolve.extensions.push('.ts', '.tsx');
 
-  if (
-    !config.resolve ||
-    !config.resolve.modules ||
-    !config.resolve.extensions ||
-    !config.module ||
-    !config.module.rules
-  ) {
-    throw new Error('Config has empty object');
-  }
+    // eslint-disable-next-line no-param-reassign
+    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+            return { ...rule, exclude: /\.svg$/i };
+        }
 
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
+        return rule;
+    });
 
-  // eslint-disable-next-line no-param-reassign
-  config.module.rules = config.module.rules.map((rule: any) => {
-    if (/svg/.test(rule.test as string)) {
-      return { ...rule, exclude: /\.svg$/i };
-    }
+    config.module.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    });
+    config.module.rules.push(buildCssLoader(true));
 
-    return rule;
-  });
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
-  config.module.rules.push(buildSvgLoader());
-  config.module.rules.push(buildCssLoader(options));
-
-  config.plugins?.push(new DefinePlugin({ __IS_DEV__: true }));
-
-  return config;
+    return config;
 };

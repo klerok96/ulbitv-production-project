@@ -1,51 +1,55 @@
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { ButtonHTMLAttributes, FC } from 'react';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
-  Clear = 'clear',
-  Outline = 'outline',
-  Background = 'background',
-  BackgroundInverted = 'background-inverted',
-  ClearInverted = 'clear-inverted',
+    CLEAR = 'clear',
+    CLEAR_INVERTED = 'clearInverted',
+    OUTLINE = 'outline',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
-  M = 'size-m',
-  L = 'size-l',
-  Xl = 'size-xl',
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
 }
 
-interface ButtonProps {
-  className?: string;
-  theme?: ButtonTheme;
-  size?: ButtonSize;
-  type?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  testId?: string;
-  onClick: () => void;
-  disabled?: boolean;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+    className?: string;
+    theme?: ButtonTheme;
+    square?: boolean;
+    size?: ButtonSize;
+    disabled?: boolean;
 }
 
-export const Button: React.FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const { className, children, theme, type, size, testId, disabled, onClick } =
-    props;
+export const Button: FC<ButtonProps> = (props) => {
+    const {
+        className,
+        children,
+        theme,
+        square,
+        disabled,
+        size = ButtonSize.M,
+        ...otherProps
+    } = props;
 
-  const mods: Record<string, boolean> = {
-    [cls[theme]]: !!theme,
-    [cls[size]]: !!size,
-    [cls.disabled]: !!disabled,
-  };
+    const mods: Record<string, boolean> = {
+        [cls[theme]]: true,
+        [cls.square]: square,
+        [cls[size]]: true,
+        [cls.disabled]: disabled,
+    };
 
-  return (
-    <button
-      disabled={disabled}
-      data-testid={testId}
-      // eslint-disable-next-line react/button-has-type
-      type={type ?? 'button'}
-      className={classNames(cls.button, mods, [className])}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
+    return (
+        <button
+            type="button"
+            className={classNames(cls.Button, mods, [className])}
+            disabled={disabled}
+            {...otherProps}
+        >
+            {children}
+        </button>
+    );
 };
